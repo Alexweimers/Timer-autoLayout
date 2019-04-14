@@ -19,9 +19,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        super.viewDidLoad()        
         
     }
     
@@ -33,14 +31,16 @@ class ViewController: UIViewController {
         
         time += 1
         
-        timerDisplay.text = String(time)
+        timerString(time: time)
+    }
+    
+    func timerString(time: Int) {
         
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         
         timerDisplay.text =  String(format:"%02i:%02i:%02i", hours, minutes, seconds)
-        
         
     }
 
@@ -59,11 +59,7 @@ class ViewController: UIViewController {
         
         time += 10
         
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        
-        timerDisplay.text =  String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        timerString(time: time)
     }
     
     
@@ -71,11 +67,7 @@ class ViewController: UIViewController {
         
         time = 0
         
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        
-        timerDisplay.text =  String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        timerString(time: time)
         
         timer.invalidate()
         
