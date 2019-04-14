@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,59 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="autoLayout_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjH-nC-8Dg">
+                                <rect key="frame" x="167.5" y="318.5" width="40" height="30"/>
+                                <state key="normal" title="Timer"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTB-7G-gwI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWt-bq-paE">
+                                <rect key="frame" x="289" y="318.5" width="30" height="30"/>
+                                <state key="normal" title="+10"/>
+                                <connections>
+                                    <action selector="add10Secs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lj7-0N-dzp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnV-m4-4I4">
+                                <rect key="frame" x="107.5" y="177" width="160" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="9Ef-PO-YIL"/>
+                                    <constraint firstAttribute="width" constant="160" id="S5N-G5-DNa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woq-Sp-sUY">
+                                <rect key="frame" x="43" y="318.5" width="35" height="30"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Wl-3f-thq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FjH-nC-8Dg" firstAttribute="leading" secondItem="woq-Sp-sUY" secondAttribute="trailing" constant="89.5" id="19q-Iz-w7g"/>
+                            <constraint firstItem="oWt-bq-paE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NCS-Ti-tSi"/>
+                            <constraint firstItem="FjH-nC-8Dg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zjh-ID-3Kp"/>
+                            <constraint firstItem="oWt-bq-paE" firstAttribute="leading" secondItem="FjH-nC-8Dg" secondAttribute="trailing" constant="81.5" id="atD-9R-1E8"/>
+                            <constraint firstItem="woq-Sp-sUY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="b4k-Rw-D7u"/>
+                            <constraint firstItem="FjH-nC-8Dg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nc3-KI-7ng"/>
+                            <constraint firstItem="FjH-nC-8Dg" firstAttribute="top" secondItem="wnV-m4-4I4" secondAttribute="bottom" constant="61.5" id="shN-LF-fSj"/>
+                            <constraint firstItem="wnV-m4-4I4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zkz-wS-5yW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timerDisplay" destination="wnV-m4-4I4" id="Khk-7C-SfZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
